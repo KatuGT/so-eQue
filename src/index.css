@@ -6,6 +6,13 @@
   box-sizing: 0;
 }
 
+:root{
+  --main-clr : #00E6F5;
+  --purple-clr : #5B157C;
+  --light-grey-clr : #B3B3B3;
+  --dark-muted-clr : #7A7A7A;
+}
+
 body{
   font-family: 'Roboto', sans-serif;
 }
