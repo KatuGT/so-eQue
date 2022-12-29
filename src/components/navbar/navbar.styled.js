@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import checkedIcon from '../../assets/iconsSVG/iconChecked.svg';
 import uncheckedIcon from '../../assets/iconsSVG/iconUnchecked.svg';
-import closeMarkSolid from '../../assets/iconsSVG/closeMarkSolid.svg';
 import leftArrow from '../../assets/iconsSVG/arrowLeftSolid.svg';
 import filterIcon from '../../assets/iconsSVG/filterIcon.svg';
 
