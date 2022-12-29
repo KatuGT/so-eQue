@@ -1,16 +1,29 @@
 import styled from 'styled-components';
 import checkedIcon from '../../assets/iconsSVG/iconChecked.svg';
 import uncheckedIcon from '../../assets/iconsSVG/iconUnchecked.svg';
+import closeMarkSolid from '../../assets/iconsSVG/closeMarkSolid.svg';
+import leftArrow from '../../assets/iconsSVG/arrowLeftSolid.svg';
+import filterIcon from '../../assets/iconsSVG/filterIcon.svg';
 
 export const WrapperHeader = styled.header`
     color: var(--main-clr);
-`;
+    background-color: var(--purple-clr);
+    margin: 0;
+    `;
 export const WrapperNavbar = styled.nav`
     display: flex;
     justify-content: space-between;
     padding: 1rem;
-    background-color: var(--purple-clr);
+    width: 100%;
+    @media screen and (min-width: 900px) {
+        width: 70%;
+        margin: 0 auto ;
+    }
 
+    @media screen and (min-width: 1200px) {
+        width: 50%;
+        margin: 0 auto ;
+    }
 `;
 
 export const ItemNavbar = styled.div`   
@@ -21,6 +34,15 @@ export const ItemNavbar = styled.div`
 export const ItemNavbarIcon = styled.div`   
     font-size: 2rem;
     line-height: 0;
+    &&.filterIcon{
+        @media screen and (min-width: 900px) {
+        display: none;
+    }
+    }
+`;
+
+export const CloseCheckbox = styled.input.attrs({ type: 'checkbox' })`   
+    display: none;
 `;
 
 export const WrapperFilter = styled.div`   
@@ -30,6 +52,14 @@ export const WrapperFilter = styled.div`
     padding-bottom: 1rem;
     translate: ${props => (props.show ? '0' : '-100%')};
     transition: .3s translate ease-in;
+    @media screen and (min-width: 900px) {
+        translate: ${props => (props.shrink ? '0' : '-80%')};
+        width: max-content;
+        min-height: 100vh;
+        position: sticky;
+        left: 0;
+        top: 0;
+    }
 `;
 
 export const HeaderFilter = styled.div`   
@@ -44,9 +74,23 @@ export const TitleFilter = styled.h3`
     font-weight: 500;
 `;
 
-export const CloseFilter = styled.span`   
-    line-height: 0;
-    font-size: 2.5rem;
+export const CloseFilter = styled.label` 
+    cursor: pointer ;
+`;
+
+export const CloseIcon = styled.div`
+    display: none;
+    @media screen and (min-width: 900px) {
+        display: block;
+        background-image: url(${filterIcon});
+        background-size: contain;
+        background-repeat: no-repeat;
+        height: 30px;
+        width: 30px;
+        ${CloseCheckbox}:checked + &&{
+            background-image: url(${leftArrow});
+        }
+    }
 `;
 
 export const Divisor = styled.div`   
@@ -57,21 +101,28 @@ export const Divisor = styled.div`
 `;
 
 export const WrapperFiltrList = styled.form`
+
 `;
 
 export const FiltrList = styled.ul`   
     list-style: none;
-`;
+    transition: opacity 0.2s ease-in-out;
+ @media screen and (min-width: 900px) {
+        opacity: ${props => (props.shrink ? '1' : '0')};
+    }`;
 
 export const WrapperFilterInput = styled.label`
     display: flex;
     justify-content: space-between;
     align-items: center;
     cursor: pointer;
+    @media screen and (min-width: 900px) {
+        display: flex;
+        gap: 3rem;
+    }
 `;
 
-export const FilterText = styled.p`   
-   
+export const FilterText = styled.p`
 `;
 
 export const CheckInput = styled.input.attrs({ type: 'checkbox' })`   
@@ -99,4 +150,8 @@ export const FiltrItem = styled.li`
 export const WrapperButton = styled.div`
     display: flex;
     padding: 1rem;
+    transition: opacity 0.2s ease-in-out;
+    @media screen and (min-width: 900px) {
+        opacity: ${props => (props.shrink ? '1' : '0')};
+    }
 `;
