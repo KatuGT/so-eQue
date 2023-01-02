@@ -8,7 +8,7 @@ export const WrapperHeader = styled.header`
     color: var(--main-clr);
     background-color: var(--purple-clr);
     margin: 0;
-    `;
+`;
 export const WrapperNavbar = styled.nav`
     display: flex;
     justify-content: space-between;
@@ -40,6 +40,10 @@ export const ItemNavbarIcon = styled.div`
     }
 `;
 
+export const WrapperFiltrList = styled.form`
+
+`;
+
 export const CloseCheckbox = styled.input.attrs({ type: 'checkbox' })`   
     display: none;
 `;
@@ -54,10 +58,9 @@ export const WrapperFilter = styled.div`
     @media screen and (min-width: 900px) {
         translate: ${props => (props.shrink ? '0' : '-80%')};
         width: max-content;
-        min-height: 100vh;
-        position: sticky;
+        position: fixed;
         left: 0;
-        top: 0;
+        top: 64px;
     }
 `;
 
@@ -97,10 +100,6 @@ export const Divisor = styled.div`
     width: 90%;
     background-color: #000;
     margin: .5rem auto;
-`;
-
-export const WrapperFiltrList = styled.form`
-
 `;
 
 export const FiltrList = styled.ul`   
