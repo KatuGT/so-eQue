@@ -26,10 +26,12 @@ export const ProfilePic = styled.img`
 `;
 
 export const NicknameAndTime = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
 `;
 
 export const Nickname = styled.a`
-    margin-bottom: .3rem;
     text-decoration: none;
     color: inherit;
     font-weight: bold;
@@ -51,9 +53,21 @@ export const LikeAndOpen = styled.div`
     gap: .5rem;
 `;
 
-export const Like = styled.div`
-    cursor: pointer;
+export const LikeInput = styled.input.attrs({ type: 'checkbox' })`
+    display: none;
 `;
+
+export const Like = styled.label`
+    cursor: pointer;
+
+ `;
+
+export const HeartLabel = styled.span`
+    color: #ffa7a7;
+     ${LikeInput}:checked + &&{
+        color: rgb(255 0 0);
+    }
+ `;
 
 export const Open = styled.a`
     color: var(--main-clr);
@@ -65,7 +79,7 @@ export const TextContainer = styled.div`
     height: 5rem;
     overflow: hidden;
     transition: all .5s ease-in-out;
-     &&:not(.longText):after{
+     &&:after{
         content: '';
         height: 100%;
         width: 100%;
@@ -85,20 +99,14 @@ export const CheckboxVerMas = styled.input.attrs({ type: 'checkbox' })`
 
 export const CardText = styled.div`
     margin: 1rem 0;
-    /* &&:has(${CheckboxVerMas}:checked) > ${TextContainer}{
-        height: ${(props) => `${props.dreamLenght}px`};
-    }
-    &&:has(${CheckboxVerMas}:checked) > ${TextContainer}:after{
-        opacity: 0;
-    } */
 `;
 
 export const WrapperCard = styled.div`
-    width: min(100%, 500px);
-    margin-left: 10rem;
-    background-color: black;
-    padding: 1rem;
+    width: min(500px, 100%);
+    background-color: rgba(0 0 0 /.9);
+    padding: 1.2rem;
     color: var(--main-clr);
+    border-radius: 0.5rem;
     &&:has(${CheckboxVerMas}:checked) ${TextContainer}{
         height: ${(props) => `${props.dreamLenght}px`};
     }
@@ -136,7 +144,9 @@ export const IconsContainer = styled.div`
     font-size: 2.5rem;
     position: relative;
 `;
-export const FooterIcon = styled.div``;
+export const FooterIcon = styled.div`
+    color: var(${(props) => (props.hasComment ? '--main-clr' : '--dark-grey-clr')});
+`;
 export const FooterIconCount = styled.div`
     height: 1.3rem;
     width: 1.3rem;
@@ -146,7 +156,7 @@ export const FooterIconCount = styled.div`
     right: -.5rem;
     bottom: .5rem;
     font-size: 1rem;
-    display: grid;
+    display: ${(props) => (props.hasComment ? 'grid' : 'none')};
     place-items: center;
     color: #fff;
     line-height: 0;

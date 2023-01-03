@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react';
 import { BiTimeFive } from 'react-icons/bi';
 import { FaCommentDots } from 'react-icons/fa';
-import { FcLikePlaceholder } from 'react-icons/fc';
+import { BsSuitHeartFill } from 'react-icons/bs';
 import { MdOutlineOpenInNew } from 'react-icons/md';
 import { TiArrowSortedDown, TiArrowSortedUp } from 'react-icons/ti';
 import { IoMdImage } from 'react-icons/io';
@@ -16,9 +16,11 @@ import {
   FooterComentsAndImage,
   FooterIcon,
   FooterIconCount,
+  HeartLabel,
   IconsContainer,
   Like,
   LikeAndOpen,
+  LikeInput,
   Nickname,
   NicknameAndTime,
   Open,
@@ -62,7 +64,10 @@ const Card = () => {
         </UserWrapper>
         <LikeAndOpen>
           <Like>
-            <FcLikePlaceholder />
+            <LikeInput />
+            <HeartLabel>
+              <BsSuitHeartFill />
+            </HeartLabel>
           </Like>
           <Open href="/">
             <MdOutlineOpenInNew />
@@ -77,16 +82,16 @@ const Card = () => {
       <CardFooter>
         <FooterComentsAndImage>
           <IconsContainer>
-            <FooterIcon>
+            <FooterIcon hasComment={true}>
               <FaCommentDots />
             </FooterIcon>
-            <FooterIconCount>3</FooterIconCount>
+            <FooterIconCount hasComment={true}>3</FooterIconCount>
           </IconsContainer>
           <IconsContainer>
-            <FooterIcon>
+            <FooterIcon hasComment={false}>
               <IoMdImage />
             </FooterIcon>
-            <FooterIconCount>2</FooterIconCount>
+            <FooterIconCount hasComment={false}>2</FooterIconCount>
           </IconsContainer>
         </FooterComentsAndImage>
         {suenioCorto.length > 240 && (
@@ -99,13 +104,13 @@ const Card = () => {
           </VerMas>
         )}
         <RedesContainer>
-          <RedesLink href='/'>
+          <RedesLink href="/">
             <RedesIcon src={FacebookIcon} />
           </RedesLink>
-          <RedesLink href='/'>
+          <RedesLink href="/">
             <RedesIcon src={InstaLogo} />
           </RedesLink>
-          <RedesLink href='/'>
+          <RedesLink href="/">
             <RedesIcon src={TwitterLogo} />
           </RedesLink>
         </RedesContainer>
