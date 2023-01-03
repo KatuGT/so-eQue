@@ -9,6 +9,9 @@ export const WrapperHeader = styled.header`
     background-color: var(--purple-clr);
     margin: 0;
     z-index: 10000;
+    position: fixed;
+    top: 0;
+    width: 100%;
 `;
 export const WrapperNavbar = styled.nav`
     display: flex;
@@ -50,18 +53,25 @@ export const CloseCheckbox = styled.input.attrs({ type: 'checkbox' })`
 `;
 
 export const WrapperFilter = styled.div`   
-    background-color: var(--light-grey-clr);
+    background-color: var(${props => (props.shrink ? '--light-grey-clr' : '--transparent-grey-clr')});
     color: #000;
     width: 80%;
     padding-bottom: 1rem;
-    translate: ${props => (props.show ? '0' : '-100%')};
+    translate: ${props => (props.shrink ? '0' : '-100%')};
     transition: .3s translate ease-in;
+    z-index: 1000;
+    min-height: 100vh;
+    transition: all .3s ease-in-out;
+    position: fixed;
+    left: 0;
+    top: 64px;
+
+    &&:hover{
+        background-color: var(--light-grey-clr);
+    }
     @media screen and (min-width: 900px) {
         translate: ${props => (props.shrink ? '0' : '-80%')};
         width: max-content;
-        position: fixed;
-        left: 0;
-        top: 64px;
     }
 `;
 

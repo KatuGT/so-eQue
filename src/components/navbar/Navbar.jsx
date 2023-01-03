@@ -35,7 +35,6 @@ const Navbar = () => {
     filtros: yup.array().ensure().max('4', 'Elija 4  como máximo'),
   });
 
-  const [showFilter, setShowFilter] = useState(false);
   const [shrinkFilter, setShrinkFilter] = useState(false);
   const { register, handleSubmit } = useForm({
     resolver: yupResolver(schema),
@@ -46,7 +45,7 @@ const Navbar = () => {
       <WrapperHeader>
         <WrapperNavbar>
           <ItemNavbarIcon className='filterIcon'>
-            <GoSettings onClick={() => setShowFilter(!showFilter)} />
+            <GoSettings onClick={() => setShrinkFilter(!shrinkFilter)} />
           </ItemNavbarIcon>
           <ItemNavbar>Soñé que...</ItemNavbar>
           <ItemNavbarIcon>
@@ -57,7 +56,7 @@ const Navbar = () => {
           </ItemNavbarIcon>
         </WrapperNavbar>
       </WrapperHeader>
-      <WrapperFilter show={showFilter} shrink={shrinkFilter}>
+      <WrapperFilter shrink={shrinkFilter}>
         <HeaderFilter>
           <TitleFilter>Soñé...</TitleFilter>
           <CloseFilter>
@@ -83,7 +82,7 @@ const Navbar = () => {
           <WrapperButton shrink={shrinkFilter}>
             <Button
               type="submit"
-              onClick={() => setShowFilter(false)}
+              onClick={() => setShrinkFilter(false)}
               text="Filtrar"
             />
           </WrapperButton>
