@@ -1,19 +1,31 @@
-import classNames from 'classnames';
 import { useRef, useState } from 'react';
 import { BiTimeFive } from 'react-icons/bi';
+import { FaCommentDots } from 'react-icons/fa';
 import { FcLikePlaceholder } from 'react-icons/fc';
 import { MdOutlineOpenInNew } from 'react-icons/md';
 import { TiArrowSortedDown, TiArrowSortedUp } from 'react-icons/ti';
+import { IoMdImage } from 'react-icons/io';
+import FacebookIcon from '../../assets/redesLogos/facebookLogo.webp';
+import InstaLogo from '../../assets/redesLogos/instagramLogo.webp';
+import TwitterLogo from '../../assets/redesLogos/twitterLogo.webp';
 import {
+  CardFooter,
   CardHeader,
   CardText,
   CheckboxVerMas,
+  FooterComentsAndImage,
+  FooterIcon,
+  FooterIconCount,
+  IconsContainer,
   Like,
   LikeAndOpen,
   Nickname,
   NicknameAndTime,
   Open,
   ProfilePic,
+  RedesContainer,
+  RedesIcon,
+  RedesLink,
   Text,
   TextContainer,
   Time,
@@ -28,14 +40,13 @@ import {
 const Card = () => {
   const [collapseText, setCollapseText] = useState(false);
 
-  const suenioCorto = 'Depending on the size of a container element, when applying fit-content  to a box element within the container to a box element within the container to a box element within the container to a box element within the container r to a box element within the box. Depending on the size of a container element, when applying fit-content  to a box element within the container to a box element within the container to a box element within the container to a box element within the container r to a box element within the boxDepending on the size of a container element, when applying fit-content  to a box element within the container to a box element within the container to a box element within the container to a box element within the container r to a box element within the box container r to a box element within the box. Depending on the size of a container element, when applying fit-content  to a box element within the container to a box element within the container to a box element within the container to a box element within the container r to a box element within the boxDepending on the size of a container element, when applying fit-content  to a box element within the container to a box element within the container to a box element within the container to a box element within the container r to a box element within the boxcontainer r to a box element within the box. Depending on the size of a container element, when applying fit-content  to a box element within the container to a box element within the container to a box element within the container to a box element within the container r to a box element within the boxDepending on the size of a container element, when applying fit-content  to a box element within the container to a box element within the container to a box element within the container to a box element within the container r to a box element within the box';
+  const suenioCorto = 'Depending on the size of a container element, when applying fit-content  to a box element within the container to a box element within the container to a box element e element, when applying fit-content  to a box element within the container to a box element within the container to a box element e element, when applying fit-content  to a box element within the container to a box element within the container to a box element e element, when applying fit-content  to a box element within the container to a box element within the container to a box element e';
 
-  const isLong = classNames(null, { longText: collapseText });
   const refSuenio = useRef(null);
   const dreamLenght = refSuenio?.current?.offsetHeight;
 
   return (
-    <WrapperCard>
+    <WrapperCard dreamLenght={dreamLenght}>
       <CardHeader>
         <UserWrapper>
           <UserProfilePic>
@@ -58,10 +69,26 @@ const Card = () => {
           </Open>
         </LikeAndOpen>
       </CardHeader>
-      <CardText dreamLenght={dreamLenght}>
-        <TextContainer className={isLong}>
+      <CardText>
+        <TextContainer>
           <Text ref={refSuenio}>{suenioCorto}</Text>
         </TextContainer>
+      </CardText>
+      <CardFooter>
+        <FooterComentsAndImage>
+          <IconsContainer>
+            <FooterIcon>
+              <FaCommentDots />
+            </FooterIcon>
+            <FooterIconCount>3</FooterIconCount>
+          </IconsContainer>
+          <IconsContainer>
+            <FooterIcon>
+              <IoMdImage />
+            </FooterIcon>
+            <FooterIconCount>2</FooterIconCount>
+          </IconsContainer>
+        </FooterComentsAndImage>
         {suenioCorto.length > 240 && (
           <VerMas>
             <CheckboxVerMas onClick={() => setCollapseText(!collapseText)} />
@@ -71,7 +98,18 @@ const Card = () => {
             </VerMasIcon>
           </VerMas>
         )}
-      </CardText>
+        <RedesContainer>
+          <RedesLink href='/'>
+            <RedesIcon src={FacebookIcon} />
+          </RedesLink>
+          <RedesLink href='/'>
+            <RedesIcon src={InstaLogo} />
+          </RedesLink>
+          <RedesLink href='/'>
+            <RedesIcon src={TwitterLogo} />
+          </RedesLink>
+        </RedesContainer>
+      </CardFooter>
     </WrapperCard>
   );
 };
