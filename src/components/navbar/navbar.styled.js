@@ -8,6 +8,7 @@ export const WrapperHeader = styled.header`
     color: var(--main-clr);
     background-color: var(--purple-clr);
     margin: 0;
+    z-index: 10000;
 `;
 export const WrapperNavbar = styled.nav`
     display: flex;
@@ -114,6 +115,7 @@ export const WrapperFilterInput = styled.label`
     justify-content: space-between;
     align-items: center;
     cursor: pointer;
+    z-index: 1000;
     @media screen and (min-width: 900px) {
         display: flex;
         gap: 3rem;
