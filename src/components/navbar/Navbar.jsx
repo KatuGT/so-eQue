@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Outlet } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
@@ -88,6 +89,10 @@ const Navbar = () => {
           </WrapperButton>
         </WrapperFiltrList>
       </WrapperFilter>
+      <div>
+
+      <Outlet/>
+      </div>
     </>
   );
 };
