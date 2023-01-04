@@ -28,7 +28,7 @@ import {
   WrapperNavbar,
 } from './navbar.styled';
 import { filters } from '../../helpers/filters.jsx';
-import { Button } from '../commonComponents/CommonComponents.jsx';
+import { Button } from '../commonComponents/button/button.jsx';
 
 const Navbar = () => {
   const schema = yup.object({

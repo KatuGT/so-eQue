@@ -1,5 +1,4 @@
 import { useRef, useState } from 'react';
-import { BiTimeFive } from 'react-icons/bi';
 import { FaCommentDots } from 'react-icons/fa';
 import { BsSuitHeartFill } from 'react-icons/bs';
 import { MdOutlineOpenInNew } from 'react-icons/md';
@@ -21,23 +20,18 @@ import {
   Like,
   LikeAndOpen,
   LikeInput,
-  Nickname,
-  NicknameAndTime,
   Open,
-  ProfilePic,
   RedesContainer,
   RedesIcon,
   RedesLink,
   Text,
   TextContainer,
-  Time,
-  UserProfilePic,
-  UserWrapper,
   VerMarText,
   VerMas,
   VerMasIcon,
   WrapperCard,
 } from './card.styled';
+import NickNameAndTime from '../commonComponents/nickNameAndTime/NickNameAndTime.jsx';
 
 const Card = () => {
   const [collapseText, setCollapseText] = useState(false);
@@ -50,18 +44,7 @@ const Card = () => {
   return (
     <WrapperCard dreamLenght={dreamLenght}>
       <CardHeader>
-        <UserWrapper>
-          <UserProfilePic>
-            <ProfilePic src="https://imgs.search.brave.com/-ujznuk6JG__TtAtxZHfJ00KrxUz0uncmtz9YiJyJVU/rs:fit:600:600:1/g:ce/aHR0cHM6Ly9zdDQu/ZGVwb3NpdHBob3Rv/cy5jb20vNDMyOTAw/OS8xOTk1Ni92LzQ1/MC9kZXBvc2l0cGhv/dG9zXzE5OTU2NTA3/Mi1zdG9jay1pbGx1/c3RyYXRpb24tY3Jl/YXRpdmUtdmVjdG9y/LWlsbHVzdHJhdGlv/bi1kZWZhdWx0LWF2/YXRhci5qcGc" />
-          </UserProfilePic>
-          <NicknameAndTime>
-            <Nickname href="/">LepsLucas</Nickname>
-            <Time>
-              <BiTimeFive />
-              Hace 4hs
-            </Time>
-          </NicknameAndTime>
-        </UserWrapper>
+        <NickNameAndTime image="https://imgs.search.brave.com/-ujznuk6JG__TtAtxZHfJ00KrxUz0uncmtz9YiJyJVU/rs:fit:600:600:1/g:ce/aHR0cHM6Ly9zdDQu/ZGVwb3NpdHBob3Rv/cy5jb20vNDMyOTAw/OS8xOTk1Ni92LzQ1/MC9kZXBvc2l0cGhv/dG9zXzE5OTU2NTA3/Mi1zdG9jay1pbGx1/c3RyYXRpb24tY3Jl/YXRpdmUtdmVjdG9y/LWlsbHVzdHJhdGlv/bi1kZWZhdWx0LWF2/YXRhci5qcGc" nickName='LucasLeps' time='4'/>
         <LikeAndOpen>
           <Like>
             <LikeInput />
