@@ -4,9 +4,7 @@ import { BsSuitHeartFill } from 'react-icons/bs';
 import { MdOutlineOpenInNew } from 'react-icons/md';
 import { TiArrowSortedDown, TiArrowSortedUp } from 'react-icons/ti';
 import { IoMdImage } from 'react-icons/io';
-import FacebookIcon from '../../assets/redesLogos/facebookLogo.webp';
-import InstaLogo from '../../assets/redesLogos/instagramLogo.webp';
-import TwitterLogo from '../../assets/redesLogos/twitterLogo.webp';
+
 import {
   CardFooter,
   CardHeader,
@@ -21,9 +19,6 @@ import {
   LikeAndOpen,
   LikeInput,
   Open,
-  RedesContainer,
-  RedesIcon,
-  RedesLink,
   Text,
   TextContainer,
   VerMarText,
@@ -32,6 +27,7 @@ import {
   WrapperCard,
 } from './card.styled';
 import NickNameAndTime from '../commonComponents/nickNameAndTime/NickNameAndTime.jsx';
+import Redes from '../commonComponents/redes/Redes.jsx';
 
 const Card = () => {
   const [collapseText, setCollapseText] = useState(false);
@@ -86,17 +82,7 @@ const Card = () => {
             </VerMasIcon>
           </VerMas>
         )}
-        <RedesContainer>
-          <RedesLink href="/">
-            <RedesIcon src={FacebookIcon} />
-          </RedesLink>
-          <RedesLink href="/">
-            <RedesIcon src={InstaLogo} />
-          </RedesLink>
-          <RedesLink href="/">
-            <RedesIcon src={TwitterLogo} />
-          </RedesLink>
-        </RedesContainer>
+        <Redes enlaceFB='/' enlaceIN='/' enlaceTW='/'/>
       </CardFooter>
     </WrapperCard>
   );

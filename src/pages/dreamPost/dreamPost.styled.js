@@ -4,4 +4,4 @@ export const WrapperDreamPost = styled.main``;
 
 export const WrapperPost = styled.div``;
 
-export const WrapperPostHeaderPost = styled.div``;
+export const HeaderPost = styled.div``;
