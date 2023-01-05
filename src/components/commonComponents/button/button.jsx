@@ -1,4 +1,4 @@
-import { ButtonComp } from './commonComp.styled';
+import { ButtonComp } from './button.styled';
 
 export const Button = ({ text, onClick }) => {
   return (

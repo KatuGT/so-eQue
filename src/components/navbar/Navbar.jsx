@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Outlet } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
@@ -28,7 +28,7 @@ import {
   WrapperNavbar,
 } from './navbar.styled';
 import { filters } from '../../helpers/filters.jsx';
-import { Button } from '../commonComponents/CommonComponents.jsx';
+import { Button } from '../commonComponents/button/button.jsx';
 
 const Navbar = () => {
   const schema = yup.object({
@@ -44,10 +44,14 @@ const Navbar = () => {
     <>
       <WrapperHeader>
         <WrapperNavbar>
-          <ItemNavbarIcon className='filterIcon'>
+          <ItemNavbarIcon className="filterIcon">
             <GoSettings onClick={() => setShrinkFilter(!shrinkFilter)} />
           </ItemNavbarIcon>
-          <ItemNavbar>Soñé que...</ItemNavbar>
+          <ItemNavbar>
+            <Link to='/'>
+            Soñé que...
+            </Link>
+            </ItemNavbar>
           <ItemNavbarIcon>
             <RiEdit2Fill />
           </ItemNavbarIcon>
@@ -58,10 +62,10 @@ const Navbar = () => {
       </WrapperHeader>
       <WrapperFilter shrink={shrinkFilter}>
         <HeaderFilter>
-          <TitleFilter>Soñé...</TitleFilter>
+            <TitleFilter>Soñé...</TitleFilter>
           <CloseFilter>
-            <CloseCheckbox/>
-            <CloseIcon onClick={() => setShrinkFilter(!shrinkFilter)}/>
+            <CloseCheckbox />
+            <CloseIcon onClick={() => setShrinkFilter(!shrinkFilter)} />
           </CloseFilter>
         </HeaderFilter>
         <Divisor />
@@ -89,8 +93,7 @@ const Navbar = () => {
         </WrapperFiltrList>
       </WrapperFilter>
       <div>
-
-      <Outlet/>
+        <Outlet />
       </div>
     </>
   );
