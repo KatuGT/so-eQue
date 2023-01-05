@@ -7,8 +7,8 @@ export const UserWrapper = styled.div`
 `;
 
 export const UserProfilePic = styled.figure`
-    height: 4rem;
-    width: 4rem;
+    height: 3rem;
+    width: 3rem;
     overflow: hidden;
     border-radius: 100vh;
 `;
