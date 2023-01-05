@@ -67,3 +67,80 @@ export const UploadImages = styled.div`
 export const TextUploadImage = styled.p`
     text-align: center;
 `;
+
+export const WrapperCommentsForm = styled.section`
+    display: flex;
+    gap: 0.5rem;
+ `;
+
+export const UserAvatar = styled.img`
+    height: 2rem;
+    width: 2rem;
+    border-radius: 100vh;
+    object-fit: cover;
+`;
+
+export const MessageForm = styled.form`
+    width: 100%;
+    display: flex;
+    gap: 0.5rem;
+    flex-direction: column;
+`;
+
+export const TextArea = styled.textarea`
+    padding: 0.5rem;
+    border-radius: 0.2rem;
+    width: inherit;
+    height: 6rem;
+    color: #fff;
+    background-color: rgba( 255 255 255 / .3);
+    &&::placeholder{
+        color: #fff;
+    }
+`;
+
+export const WrapperComments = styled.div`
+    color: #fff;
+`;
+
+export const CommentsCounts = styled.p`
+    font-size: 14px;
+`;
+
+export const Divisor = styled.div`
+    height: 1px;
+    width: 100%;
+    background-color: var(--main-clr);
+    margin: 0.5rem 0;
+`;
+
+export const Comment = styled.div`
+    display: flex;
+    gap: 0.5rem;
+`;
+
+export const UserAndText = styled.div`
+`;
+
+export const TimeAndNickName = styled.div`
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+`;
+
+export const NickName = styled.p`
+    color: var(--main-clr);
+    font-weight: 500;
+    font-size: 18px;
+`;
+
+export const Time = styled.span`
+    display: flex;  
+    gap: 0.3rem;
+    align-items: center;
+    font-size: 14px;
+    color: var(--light-grey-clr );
+    line-height: 0;
+`;
+
+export const TextComment = styled.p``;
