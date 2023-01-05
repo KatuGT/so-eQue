@@ -32,6 +32,10 @@ export const WrapperNavbar = styled.nav`
 export const ItemNavbar = styled.div`   
     font-size: 1.5rem;
     font-weight: 700;
+    && a{
+        text-decoration: none;
+        color: inherit;
+    }
 `;
 
 export const ItemNavbarIcon = styled.div`   

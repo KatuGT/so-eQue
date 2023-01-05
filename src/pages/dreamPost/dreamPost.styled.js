@@ -2,6 +2,8 @@ import styled from 'styled-components';
 
 export const WrapperDreamPost = styled.main`
     padding: 5rem 1.5rem;
+    margin: 0 auto;
+    width: min(100%, 700px);
 `;
 
 export const WrapperPost = styled.div`

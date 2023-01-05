@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { useRef, useState } from 'react';
 import { FaCommentDots } from 'react-icons/fa';
 import { BsSuitHeartFill } from 'react-icons/bs';
@@ -40,7 +41,11 @@ const Card = () => {
   return (
     <WrapperCard dreamLenght={dreamLenght}>
       <CardHeader>
-        <NickNameAndTime image="https://imgs.search.brave.com/-ujznuk6JG__TtAtxZHfJ00KrxUz0uncmtz9YiJyJVU/rs:fit:600:600:1/g:ce/aHR0cHM6Ly9zdDQu/ZGVwb3NpdHBob3Rv/cy5jb20vNDMyOTAw/OS8xOTk1Ni92LzQ1/MC9kZXBvc2l0cGhv/dG9zXzE5OTU2NTA3/Mi1zdG9jay1pbGx1/c3RyYXRpb24tY3Jl/YXRpdmUtdmVjdG9y/LWlsbHVzdHJhdGlv/bi1kZWZhdWx0LWF2/YXRhci5qcGc" nickName='LucasLeps' time='4'/>
+        <NickNameAndTime
+          image="https://imgs.search.brave.com/-ujznuk6JG__TtAtxZHfJ00KrxUz0uncmtz9YiJyJVU/rs:fit:600:600:1/g:ce/aHR0cHM6Ly9zdDQu/ZGVwb3NpdHBob3Rv/cy5jb20vNDMyOTAw/OS8xOTk1Ni92LzQ1/MC9kZXBvc2l0cGhv/dG9zXzE5OTU2NTA3/Mi1zdG9jay1pbGx1/c3RyYXRpb24tY3Jl/YXRpdmUtdmVjdG9y/LWlsbHVzdHJhdGlv/bi1kZWZhdWx0LWF2/YXRhci5qcGc"
+          nickName="LucasLeps"
+          time="4"
+        />
         <LikeAndOpen>
           <Like>
             <LikeInput />
@@ -48,9 +53,11 @@ const Card = () => {
               <BsSuitHeartFill />
             </HeartLabel>
           </Like>
-          <Open href="/">
-            <MdOutlineOpenInNew />
-          </Open>
+          <Link to="dream">
+            <Open>
+              <MdOutlineOpenInNew />
+            </Open>
+          </Link>
         </LikeAndOpen>
       </CardHeader>
       <CardText>
@@ -82,7 +89,7 @@ const Card = () => {
             </VerMasIcon>
           </VerMas>
         )}
-        <Redes enlaceFB='/' enlaceIN='/' enlaceTW='/'/>
+        <Redes enlaceFB="/" enlaceIN="/" enlaceTW="/" />
       </CardFooter>
     </WrapperCard>
   );
