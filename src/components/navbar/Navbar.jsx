@@ -1,11 +1,10 @@
-import { useState } from 'react';
-import { Link, Outlet } from 'react-router-dom';
+import { useEffect, useRef, useState } from 'react';
+import { Link, NavLink, Outlet } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { GoSettings } from 'react-icons/go';
 import { RiEdit2Fill } from 'react-icons/ri';
-import { FaUserCircle } from 'react-icons/fa';
 import {
   CheckIcon,
   CheckInput,
@@ -17,6 +16,7 @@ import {
   FiltrItem,
   FiltrList,
   HeaderFilter,
+  IconUser,
   ItemNavbar,
   ItemNavbarIcon,
   TitleFilter,
@@ -26,6 +26,7 @@ import {
   WrapperFiltrList,
   WrapperHeader,
   WrapperNavbar,
+  WrapperUserOptions,
 } from './navbar.styled';
 import { filters } from '../../helpers/filters.jsx';
 import { Button } from '../commonComponents/button/button.jsx';
@@ -35,11 +36,26 @@ const Navbar = () => {
     filtros: yup.array().ensure().max('4', 'Elija 4  como máximo'),
   });
 
-  const [shrinkFilter, setShrinkFilter] = useState(false);
   const { register, handleSubmit } = useForm({
     resolver: yupResolver(schema),
   });
   const onSubmit = (data) => console.log(data);
+
+  const [shrinkFilter, setShrinkFilter] = useState(false);
+  const [showUserOption, setShowUserOption] = useState(false);
+
+  const userIcon = useRef();
+
+  useEffect(() => {
+    const closeMenu = (e) => {
+      if (e.composedPath()[0] !== userIcon.current) {
+        setShowUserOption(false);
+      }
+    };
+    document.body.addEventListener('click', closeMenu);
+    return () => document.body.removeEventListener('click', closeMenu);
+  }, []);
+
   return (
     <>
       <WrapperHeader>
@@ -48,23 +64,29 @@ const Navbar = () => {
             <GoSettings onClick={() => setShrinkFilter(!shrinkFilter)} />
           </ItemNavbarIcon>
           <ItemNavbar>
-            <Link to='/'>
-            Soñé que...
-            </Link>
-            </ItemNavbar>
+            <Link to="/">Soñé que...</Link>
+          </ItemNavbar>
           <ItemNavbarIcon>
-            <Link to='post-dream'>
-            <RiEdit2Fill />
+            <Link to="post-dream">
+              <RiEdit2Fill />
             </Link>
           </ItemNavbarIcon>
-          <ItemNavbarIcon>
-            <FaUserCircle />
+          <ItemNavbarIcon
+            onClick={() => setShowUserOption(!showUserOption)}
+          >
+            <IconUser ref={userIcon}/>
+            {showUserOption && (
+              <WrapperUserOptions>
+                <p>Cerrar sesión</p>
+                <NavLink to="/">Mi cuenta</NavLink>
+              </WrapperUserOptions>
+            )}
           </ItemNavbarIcon>
         </WrapperNavbar>
       </WrapperHeader>
       <WrapperFilter shrink={shrinkFilter}>
         <HeaderFilter>
-            <TitleFilter>Soñé...</TitleFilter>
+          <TitleFilter>Soñé...</TitleFilter>
           <CloseFilter>
             <CloseCheckbox />
             <CloseIcon onClick={() => setShrinkFilter(!shrinkFilter)} />

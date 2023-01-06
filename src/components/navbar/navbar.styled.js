@@ -3,6 +3,7 @@ import checkedIcon from '../../assets/iconsSVG/iconChecked.svg';
 import uncheckedIcon from '../../assets/iconsSVG/iconUnchecked.svg';
 import leftArrow from '../../assets/iconsSVG/arrowLeftSolid.svg';
 import filterIcon from '../../assets/iconsSVG/filterIcon.svg';
+import userIcon from '../../assets/iconsSVG/userIcon.svg';
 
 export const WrapperHeader = styled.header`
     color: var(--main-clr);
@@ -41,8 +42,12 @@ export const ItemNavbar = styled.div`
 export const ItemNavbarIcon = styled.div`   
     font-size: 2rem;
     line-height: 0;
+    position: relative;
     && a{
         color: inherit;
+    }
+    &&.userIcon{
+        cursor: pointer;
     }
     &&.filterIcon{
         @media screen and (min-width: 900px) {
@@ -51,8 +56,40 @@ export const ItemNavbarIcon = styled.div`
     }
 `;
 
-export const WrapperFiltrList = styled.form`
+export const IconUser = styled.div`
+    height: 2rem;
+    width: 2rem;
+    background-image: url(${userIcon});
+    background-size: contain;
+    fill: var(--main-clr);
 
+`;
+
+export const WrapperUserOptions = styled.div`
+    position: absolute;
+    background-color: var(--purple-clr);
+    right: 0;
+    bottom: -300%;
+    height: max-content;
+    width: max-content;
+    display: flex;
+    flex-direction: column;
+    line-height: normal;
+    font-size: 1rem;
+    && p,
+    && a{
+        padding: 0.8rem 1rem;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    && p:hover,
+    && a:hover{
+        background-color: var(--main-clr);
+        color: var(--purple-clr);
+    }
+`;
+
+export const WrapperFiltrList = styled.form`
 `;
 
 export const CloseCheckbox = styled.input.attrs({ type: 'checkbox' })`   
@@ -77,7 +114,7 @@ export const WrapperFilter = styled.div`
         background-color: var(--light-grey-clr);
     }
     @media screen and (min-width: 900px) {
-        translate: ${props => (props.shrink ? '0' : '-80%')};
+        translate: ${props => (props.shrink ? '0' : '-60%')};
         width: max-content;
     }
 `;
@@ -122,9 +159,9 @@ export const Divisor = styled.div`
 
 export const FiltrList = styled.ul`   
     list-style: none;
-    transition: opacity 0.2s ease-in-out;
+    transition: display 0.2s ease-in-out;
  @media screen and (min-width: 900px) {
-        opacity: ${props => (props.shrink ? '1' : '0')};
+        display: ${props => (props.shrink ? 'initial' : 'none')};
     }`;
 
 export const WrapperFilterInput = styled.label`
