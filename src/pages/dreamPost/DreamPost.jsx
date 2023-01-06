@@ -1,7 +1,7 @@
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
-import { BiImageAdd, BiTimeFive } from 'react-icons/bi';
+import { BiTimeFive } from 'react-icons/bi';
 import { Button } from '../../components/commonComponents/button/button.jsx';
 import NickNameAndTime from '../../components/commonComponents/nickNameAndTime/NickNameAndTime.jsx';
 import Redes from '../../components/commonComponents/redes/Redes.jsx';
@@ -15,8 +15,6 @@ import {
   TitleSection,
   WrapperPreview,
   Images,
-  UploadImages,
-  TextUploadImage,
   UserAvatar,
   MessageForm,
   TextArea,
@@ -32,6 +30,7 @@ import {
   UserAndText,
 } from './dreamPost.styled';
 import ErrorComment from '../../components/commonComponents/errorComment/ErrorComment.jsx';
+import UploadImg from '../../components/commonComponents/buttonUploadImg/UploadImg.jsx';
 
 const DreamPost = () => {
   const schema = yup.object({
@@ -75,10 +74,7 @@ const DreamPost = () => {
         <GroupImages>
           <TitleSection>Ilustraciones subidas de otros usuarios:</TitleSection>
           <WrapperPreview>
-            <UploadImages>
-              <BiImageAdd className="icono" />
-              <TextUploadImage>Sube tu imagen</TextUploadImage>
-            </UploadImages>
+            <UploadImg/>
             <Images src="https://3.bp.blogspot.com/-sOSk1GwrHSg/Uc3MjJUcF_I/AAAAAAAAAMQ/f9XgHSCbSgE/s1024/unicornio.jpg" />
           </WrapperPreview>
         </GroupImages>
