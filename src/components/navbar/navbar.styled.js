@@ -80,6 +80,7 @@ export const WrapperUserOptions = styled.div`
     && a{
         padding: 0.8rem 1rem;
         text-decoration: none;
+        cursor: pointer;
     }
     && p:hover,
     && a:hover{
@@ -113,7 +114,7 @@ export const WrapperFilter = styled.div`
         background-color: var(--light-grey-clr);
     }
     @media screen and (min-width: 900px) {
-        translate: ${props => (props.shrink ? '0' : '-80%')};
+        translate: ${props => (props.shrink ? '0' : '-60%')};
         width: max-content;
     }
 `;
@@ -158,9 +159,9 @@ export const Divisor = styled.div`
 
 export const FiltrList = styled.ul`   
     list-style: none;
-    transition: opacity 0.2s ease-in-out;
+    transition: display 0.2s ease-in-out;
  @media screen and (min-width: 900px) {
-        opacity: ${props => (props.shrink ? '1' : '0')};
+        display: ${props => (props.shrink ? 'initial' : 'none')};
     }`;
 
 export const WrapperFilterInput = styled.label`
