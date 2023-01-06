@@ -53,7 +53,9 @@ const Navbar = () => {
             </Link>
             </ItemNavbar>
           <ItemNavbarIcon>
+            <Link to='post-dream'>
             <RiEdit2Fill />
+            </Link>
           </ItemNavbarIcon>
           <ItemNavbarIcon>
             <FaUserCircle />

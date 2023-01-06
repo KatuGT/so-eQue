@@ -41,6 +41,9 @@ export const ItemNavbar = styled.div`
 export const ItemNavbarIcon = styled.div`   
     font-size: 2rem;
     line-height: 0;
+    && a{
+        color: inherit;
+    }
     &&.filterIcon{
         @media screen and (min-width: 900px) {
         display: none;
