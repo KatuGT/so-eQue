@@ -4,16 +4,25 @@ export const WrapperSecondaryCard = styled.div`
   color: #fff;
   width: min(100%, 500px);
   margin: 0 auto;
+  padding: 1rem;
 `;
 
 export const WrapperDate = styled.div`
   display: flex;
   gap: 0.2rem;
+  align-items: center;
 `;
 
 export const TextDate = styled.p`
   font-size: 14px;
   color: var(--light-grey-clr);
+`;
+
+export const DreamOwner = styled.a`
+  font-size: 1.2rem;
+  color: var(--main-clr);
+  font-weight: 500;
+  text-decoration: none;
 `;
 
 export const DreamText = styled.p`

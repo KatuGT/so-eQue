@@ -1,8 +1,22 @@
 import React from 'react';
+import SecondaryCard from '../../components/secondaryCard/SecondaryCard.jsx';
+import { WrapperDreamsILike } from './dreamsILike.styled';
 
 const DreamsILike = () => {
   return (
-    <div>DreamsILike</div>
+    <WrapperDreamsILike>
+      <SecondaryCard DreamIlike={true}/>
+      <SecondaryCard DreamIlike={true}/>
+      <SecondaryCard DreamIlike={true}/>
+      <SecondaryCard DreamIlike={true}/>
+      <SecondaryCard DreamIlike={true}/>
+      <SecondaryCard DreamIlike={true}/>
+      <SecondaryCard DreamIlike={true}/>
+      <SecondaryCard DreamIlike={true}/>
+      <SecondaryCard DreamIlike={true}/>
+      <SecondaryCard DreamIlike={true}/>
+      <SecondaryCard DreamIlike={true}/>
+    </WrapperDreamsILike>
   );
 };
 
