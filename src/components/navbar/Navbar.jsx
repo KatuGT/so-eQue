@@ -78,7 +78,7 @@ const Navbar = () => {
             {showUserOption && (
               <WrapperUserOptions>
                 <p>Cerrar sesión</p>
-                <NavLink to="/">Mi cuenta</NavLink>
+                <NavLink to="user-profile/">Mi cuenta</NavLink>
               </WrapperUserOptions>
             )}
           </ItemNavbarIcon>
