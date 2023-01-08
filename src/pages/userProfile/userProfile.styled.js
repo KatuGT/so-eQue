@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { ButtonComp } from '../../components/commonComponents/button/button.styled';
 
 export const WrapperPerfil = styled.div`
     color: #fff;
@@ -29,6 +30,17 @@ export const UserName = styled.h3`
 export const OtherData = styled.p``;
 
 export const GroupButtons = styled.div`
+    margin-top: 2rem;
+
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+`;
+
+export const CenteredButton = styled(ButtonComp)`
+    margin-left: initial;
+    background-color: ${props => props.danger && '#ff0000'};
+    color: ${props => props.danger && '#fff'};
 `;

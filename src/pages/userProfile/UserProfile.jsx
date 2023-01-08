@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button } from '../../components/commonComponents/button/button.jsx';
 import {
+  CenteredButton,
   DataUser,
   GroupButtons,
   ImgAndData,
@@ -23,9 +24,9 @@ const UserProfile = () => {
         </DataUser>
       </ImgAndData>
       <GroupButtons>
-        <Button text="Editar" />
-        <Button text="Deshabilitar" />
-        <Button text="Eliminar permanentemente" />
+        <CenteredButton>Editar</CenteredButton>
+        <CenteredButton>Deshabilitar</CenteredButton>
+        <CenteredButton danger={true}>Eliminar permanentemente</CenteredButton>
       </GroupButtons>
     </WrapperPerfil>
   );
